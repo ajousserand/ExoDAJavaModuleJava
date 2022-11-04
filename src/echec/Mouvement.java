@@ -2,8 +2,8 @@ package echec;
 
 import java.util.List;
 
-interface Mouvement {
+public interface Mouvement {
 
-	List<Position> getMouvementPossible();
+	public List<Position> getMouvementPossible();
 	
 }

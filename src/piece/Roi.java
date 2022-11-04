@@ -1,7 +1,11 @@
-package echec;
+package piece;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import echec.Couleur;
+import echec.Mouvement;
+import echec.Position;
 
 public class Roi extends Piece implements Mouvement{
 	public static List <Roi> tabRoi=new ArrayList<Roi>();
@@ -78,7 +82,7 @@ public class Roi extends Piece implements Mouvement{
 	}
 
 
-	String update()
+	public String update()
 	{
 		String result="";
 		List<Position> tempTab;
@@ -118,7 +122,7 @@ public class Roi extends Piece implements Mouvement{
 		return result;
 	}
 
-	static Roi getRoiCouleur(Couleur c)
+	public static Roi getRoiCouleur(Couleur c)
 	{
 		for (Roi r:Roi.tabRoi) {
 			if (r.couleur.equals(c))
@@ -129,7 +133,6 @@ public class Roi extends Piece implements Mouvement{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "[Roi "+super.position.getX()+","+super.position.getY()+"]" ;
 	}
 

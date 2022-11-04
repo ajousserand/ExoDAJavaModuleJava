@@ -1,6 +1,10 @@
 package echec;
 
 import java.util.List;
+
+import piece.Piece;
+import piece.Roi;
+
 import java.util.ArrayList;
 
 public class Joueur{

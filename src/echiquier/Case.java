@@ -1,4 +1,7 @@
-package echec;
+package echiquier;
+
+import echec.Position;
+import piece.Piece;
 
 public class Case {
 	private Position position;
@@ -30,7 +33,7 @@ public class Case {
 		return piece;
 	}
 	
-	public void positionne(Piece p){ //cohérence du projet
+	public void positionne(Piece p){
 		this.piece=p;
 	}
 

@@ -1,6 +1,10 @@
-package echec;
+package piece;
 
 import java.util.*;
+
+import echec.Couleur;
+import echec.Mouvement;
+import echec.Position;
 
 public class Pion extends Piece implements Mouvement{
 

@@ -2,6 +2,16 @@ package echec;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import echiquier.Case;
+import echiquier.Echiquier;
+import piece.Cavalier;
+import piece.Fou;
+import piece.Piece;
+import piece.Pion;
+import piece.Reine;
+import piece.Roi;
+import piece.Tour;
+
 public class Game {
 	private Joueur joueurActuel;
 	private int numTour=1;
@@ -91,7 +101,7 @@ public class Game {
 		
 		Cavalier C1=new Cavalier(2,8,Couleur.BLACK);
 		Cavalier c2=new Cavalier(7,8,Couleur.BLACK);
-		Cavalier c3=new Cavalier(2,1,Couleur.WHITE); //indentation du code
+		Cavalier c3=new Cavalier(2,1,Couleur.WHITE); 
 		Cavalier c4=new Cavalier(7,1,Couleur.WHITE);
 
 		Fou F1=new Fou(3,8,Couleur.BLACK);
@@ -196,16 +206,12 @@ public class Game {
 		}
 		Case caseTemp=echiquier.getCase(depart.getX(), depart.getY());
 		caseTemp.vider();
+		Case caseTemp2=echiquier.getCase(arrivee.getX(), arrivee.getY());
+		caseTemp2.positionne(selectionnee);
 		System.out.println(caseTemp.getPosition());
 
 		finDuTour();
-
-
-
-
 	}
-
-
 
 	private Position getEntree(int n)
 	{
@@ -242,17 +248,17 @@ public class Game {
 			t=count.update();
 
 			Couleur coul=count.getCouleur();
-			if(count.echec && !count.echecEtMat){
+			if(count.isEchec() && !count.isEchecEtMat()){
 				System.out.println("Le roi "+count.getCouleur()+ " est en echec");
-			}else if (count.echec && count.echecEtMat || count.echecEtPat){
-					over=true;
-					System.out.println("Le roi "+count.couleur+" est en "+t+"\n");
-					if (coul.equals(Couleur.WHITE)){
-						System.out.print("Le joueur "+this.listeJoueurs.get(0));
-					}else{
-						System.out.print("Le joueur "+this.listeJoueurs.get(1));
-					}
-					System.out.println(" a perdu");
+			}else if (count.isEchec() && count.isEchecEtMat() || count.isEchecEtMat()){
+				over=true;
+				System.out.println("Le roi "+count.getCouleur()+" est en "+t+"\n");
+				if (coul.equals(Couleur.WHITE)){
+					System.out.print("Le joueur "+this.listeJoueurs.get(0));
+				}else{
+					System.out.print("Le joueur "+this.listeJoueurs.get(1));
+				}
+				System.out.println(" a perdu");
 			}
 		}
 	}

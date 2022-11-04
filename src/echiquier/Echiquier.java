@@ -1,5 +1,9 @@
-package echec;
+package echiquier;
 import java.util.*;
+
+import echec.Couleur;
+import echec.Position;
+import piece.Piece;
 
 public class Echiquier {
 	
@@ -19,7 +23,7 @@ public class Echiquier {
 	public void initialisation() {
 		for (Piece count:Piece.tabPiece){
 			for (Case carre:tabCase){
-				if (count.position.equals(carre.getPosition())){
+				if (count.getPosition().equals(carre.getPosition())){
 						carre.positionne(count);
 						break;
 				}

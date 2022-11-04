@@ -53,12 +53,12 @@ public class Position {
 	}
 
 	@Override
-	protected Position clone(){
+	public Position clone(){
 		Position temp =new Position(this.getX(),this.getY());
 		return temp;
 	}
 	
-	protected boolean inBounds(){		
+	public boolean inBounds(){		
 		if(x>=min && x<=max &&  y>=min && y<=max)
 			return true;
 		return false;

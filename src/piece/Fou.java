@@ -1,6 +1,10 @@
-package echec;
+package piece;
 
 import java.util.*;
+
+import echec.Couleur;
+import echec.Mouvement;
+import echec.Position;
 
 public class Fou extends Piece implements Mouvement{
 
@@ -12,14 +16,11 @@ public class Fou extends Piece implements Mouvement{
 	}
 
 	@Override
-	public
-	List<Position> getMouvementPossible() {  
+	public List<Position> getMouvementPossible() {  
 		int x=position.getX();
 		int y=position.getY();
 		Position temp=new Position(x,y);
 		List<Position> mouvementPossible = new ArrayList<Position>();
-
-
 			for(int c=1;c<8;c++)				
 			{
 				temp.setX(x+c);
